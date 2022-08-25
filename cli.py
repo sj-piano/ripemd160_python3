@@ -205,7 +205,7 @@ def get_python_version(a):
 
 
 def get_ripemd160(a):
-  result = ripemd160.code.ripemd160.hash(a.data)
+  result = ripemd160.code.ripemd160.hexdigest(a.data)
   print(result)
 
 

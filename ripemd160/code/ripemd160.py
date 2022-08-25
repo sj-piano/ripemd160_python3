@@ -232,16 +232,18 @@ class RIPEMD160:
 
   def __init__(self, data=''):
     self.h = initial_h
-    self.bytes = 0    # input size (in bytes)
+    self.bytes = 0  # input size (in bytes)
     self.buf = bytes()
     self.update(data)
 
 
   def update(self, data):
+
     def get_bytes():
       if isinstance(data, str):
         return bytes(ord(d) for d in data)
-
+      if not isinstance(data, bytes):
+        raise TypeError("Expected type 'bytes', but instead received '{}'.".format(type(data).__name__))
       return data
 
     data_bytes = get_bytes()
@@ -279,7 +281,6 @@ class RIPEMD160:
 
   def hexdigest(self):
     digest = self.digest()
-
     return hexlify(digest).decode()
 
 
@@ -293,17 +294,22 @@ class RIPEMD160:
 
 
 
-def new(data=''):
-  return RIPEMD160(data)
+# Shortcuts
 
 
 digest_size = RIPEMD160.digest_size
 
 
-def hash(data):
-  # Accept a data string and return a hash string.
-  if not isinstance(data, str):
-    msg = "Expected data to be type 'string', but instead received type '{}'.".format(type(data).__name__)
-    raise TypeError(msg)
+def new(data=''):
+  return RIPEMD160(data)
+
+
+def digest(data):
+  return RIPEMD160(data).digest()
+
+
+def hexdigest(data):
   return RIPEMD160(data).hexdigest()
+
+
 

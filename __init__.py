@@ -20,12 +20,17 @@ from . import ripemd160
 # This file allows a parent package to run this:
 # import ripemd160
 # ripemd160.hello()
-# result = ripemd160.hash(ascii_input_string)
+# result_bytes = ripemd160.RIPEMD160(ascii_input_string).digest()
+# result_bytes = ripemd160.digest(ascii_input_string)
+# result_bytes = ripemd160.digest(input_bytes)
+# result_hex = ripemd160.hexdigest(ascii_input_string)
 hello = ripemd160.code.hello.hello
 validate = ripemd160.util.validate
 configure_module_logger = ripemd160.util.module_logger.configure_module_logger
 #submodules = ripemd160.submodules
-hash = ripemd160.code.ripemd160.hash
+RIPEMD160 = ripemd160.code.ripemd160.RIPEMD160
+digest = ripemd160.code.ripemd160.digest
+hexdigest = ripemd160.code.ripemd160.hexdigest
 
 
 
