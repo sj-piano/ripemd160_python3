@@ -18,7 +18,7 @@ from . import ripemd160
 
 # Collect up the things that we want in the immediate namespace of this module when it is imported.
 # This file allows a parent package to run this:
-# import ripemd160
+# import ripemd160_python3 as ripemd160
 # ripemd160.hello()
 # result_bytes = ripemd160.RIPEMD160(ascii_input_string).digest()
 # result_bytes = ripemd160.digest(ascii_input_string)
