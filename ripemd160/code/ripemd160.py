@@ -228,6 +228,7 @@ class RIPEMD160:
 
 
   digest_size = 20
+  name = 'RIPEMD160'
 
 
   def __init__(self, data=''):
@@ -242,8 +243,10 @@ class RIPEMD160:
     def get_bytes():
       if isinstance(data, str):
         return bytes(ord(d) for d in data)
-      if not isinstance(data, bytes):
-        raise TypeError("Expected type 'bytes', but instead received '{}'.".format(type(data).__name__))
+      permitted_types = 'bytes memoryview'.split()
+      if not isinstance(m, bytes) and not isinstance(m, memoryview):
+        msg = "Expected a type in the list {}, but instead received '{}'.".format(permitted_types, type(m).__name__)
+        raise TypeError(msg)
       return data
 
     data_bytes = get_bytes()
