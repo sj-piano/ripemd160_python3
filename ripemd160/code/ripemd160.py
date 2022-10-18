@@ -244,8 +244,8 @@ class RIPEMD160:
       if isinstance(data, str):
         return bytes(ord(d) for d in data)
       permitted_types = 'bytes memoryview'.split()
-      if not isinstance(m, bytes) and not isinstance(m, memoryview):
-        msg = "Expected a type in the list {}, but instead received '{}'.".format(permitted_types, type(m).__name__)
+      if not isinstance(data, bytes) and not isinstance(data, memoryview):
+        msg = "Expected a type in the list {}, but instead received '{}'.".format(permitted_types, type(data).__name__)
         raise TypeError(msg)
       return data
 
