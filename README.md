@@ -10,21 +10,21 @@ A pure Python 3 implementation of the RIPEMD-160 hash algorithm.
 
 ```bash
 
-python3 cli.py
+python cli.py
 
-python3 cli.py --help
+python cli.py --help
 
-python3 cli.py --task hello
+python cli.py --task hello
 
-python3 cli.py --task hello --log-level=info
+python cli.py --task hello --log-level=info
 
-python3 cli.py --task hello --log-level=debug
+python cli.py --task hello --log-level=debug
 
-python3 cli.py --task get_python_version
+python cli.py --task get_python_version
 
-python3 cli.py --task get_ripemd160 --data "hello world"
+python cli.py --task get_ripemd160 --data "hello world"
 
-python3 cli.py --task get_ripemd160 --file ripemd160/data/data1.txt
+python cli.py --task get_ripemd160 --file ripemd160/data/data1.txt
 
 ```
 
@@ -34,19 +34,19 @@ Tests:
 ```bash
 
 # Run all tests, including submodule tests.
-pytest3
+pytest
 
 # Run all tests in a specific test file
-pytest3 ripemd160/test/test_hello.py
+pytest ripemd160/test/test_hello.py
 
 # Run tests with relatively little output
-pytest3 --quiet ripemd160/test/test_hello.py
+pytest --quiet ripemd160/test/test_hello.py
 
 # Run a single test
-pytest3 ripemd160/test/test_hello.py::test_hello
+pytest ripemd160/test/test_hello.py::test_hello
 
 # Print log output in real-time during a single test
-pytest3 --capture=no --log-cli-level=INFO ripemd160/test/test_hello.py::test_hello
+pytest --capture=no --log-cli-level=INFO ripemd160/test/test_hello.py::test_hello
 
 # Note: The --capture=no option will also cause print statements within the test code to produce output.
 
