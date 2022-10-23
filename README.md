@@ -80,8 +80,10 @@ Successfully run under the following environments:
 
 1:  
 - Ubuntu 16.04 on WSL (Windows Subsystem for Linux) on Windows 10  
-- Python 3.5.2  
-- pytest 6.1.2  
+- Python 3.6.15  
+- pytest 7.0.1  
+
+Recommendation: Use `pyenv` to install these specific versions of `python` and `pytest`.
 
 
 
